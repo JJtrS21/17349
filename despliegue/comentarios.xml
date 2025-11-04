@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comentarios>
+  <comentario>
+    <nombre>Jorge</nombre>
+    <tipo>general</tipo>
+    <capitulo></capitulo>
+    <texto>¡Me encanta esta historia!</texto>
+  </comentario>
+
+  <comentario>
+    <nombre>Ana</nombre>
+    <tipo>capitulo</tipo>
+    <capitulo>1</capitulo>
+    <texto>Me encantó el capítulo 1</texto>
+  </comentario>
+
+  <comentario>
+    <nombre>Luis</nombre>
+    <tipo>general</tipo>
+    <capitulo></capitulo>
+    <texto>La historia es muy original</texto>
+  </comentario>
+
+  <comentario>
+    <nombre>Sofía</nombre>
+    <tipo>general</tipo>
+    <capitulo></capitulo>
+    <texto>¡Quiero saber más de los personajes!</texto>
+  </comentario>
+
+  <comentario>
+    <nombre>Marco</nombre>
+    <tipo>capitulo</tipo>
+    <capitulo>2</capitulo>
+    <texto>La escena final del capítulo 2 fue épica</texto>
+  </comentario>
+</comentarios>

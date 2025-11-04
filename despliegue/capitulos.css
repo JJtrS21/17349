@@ -1,0 +1,63 @@
+:root {
+  --color-fondo: #fdfdfd;
+  --color-principal: #16722a;
+  --color-texto: #222;
+  --fondo-encabezado: #e3f2fd;
+  --fondo-pie	: #a9e29e;
+  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--fondo-encabezado);
+  padding: 1rem 2rem;
+  border-bottom: 3px solid var(--color-principal);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--color-principal);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-texto);
+  font-weight: bold;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--color-principal);
+  outline: 2px solid var(--color-principal);
+}
+
+main {
+  padding: 0rem 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+footer {
+  background-color: var(--fondo-pie);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}

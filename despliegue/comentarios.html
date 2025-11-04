@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comentarios - Mendel Monster's</title>
+  <link rel="stylesheet" href="comentarios.css" />
+</head>
+<body>
+  <header role="banner">
+    <h1>Mendel Monster's - Comentarios</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="capitulos.html">Capítulos</a></li>
+        <li><a href="comentarios.html" aria-current="page">Comentarios</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main role="main">
+    <section aria-labelledby="deja-comentario">
+      <h2 id="deja-comentario">Deja tu comentario</h2>
+      <form id="form-comentario" aria-label="Formulario para dejar comentario">
+        <label for="nombre">Nombre:</label><br/>
+        <input type="text" id="nombre" name="nombre" required /><br/><br/>
+
+        <label for="tipo">Tipo de comentario:</label><br/>
+        <select id="tipo" name="tipo">
+          <option value="general">Toda la obra</option>
+          <option value="capitulo">Por capítulo</option>
+        </select><br/><br/>
+
+        <label for="capitulo" id="capitulo-label" style="display: none;">Capítulo:</label><br/>
+        <input type="text" id="capitulo" name="capitulo" placeholder="Ej: capitulo1" style="display: none;" /><br/><br/>
+
+        <label for="comentario">Comentario:</label><br/>
+        <textarea id="comentario" name="comentario" rows="4" required></textarea><br/><br/>
+
+        <button type="submit">Enviar comentario</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="comentarios-previos">
+      <h2 id="comentarios-previos">Comentarios anteriores</h2>
+
+      <label for="filtro">Filtrar por tipo:</label>
+      <select id="filtro">
+        <option value="todos">Mostrar todos</option>
+        <option value="general">Solo generales</option>
+        <option value="capitulo">Solo por capítulo</option>
+      </select>
+
+      <table id="tabla-comentarios" aria-describedby="tabla-descripcion">
+        <caption class="sr-only" id="tabla-descripcion">Tabla de comentarios enviados por los usuarios. 
+          Muestra el nombre, tipo de comentario, es decir, si esta dirigido a la obra en general o a un capítulo 
+          en específico, capítulo asociado y el texto del comentario.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Capítulo</th>
+            <th scope="col">Comentario</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2025 Jorge - Mendel Monster's</p>
+  </footer>
+
+  <script src="comentarios.js"></script>
+</body>
+</html>
