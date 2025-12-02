@@ -1,8 +1,18 @@
-FROM alpine
-RUN apk add nginx
-#RUN ngix
-CMD ["nginx", "-g", "daemon off;"]
-EXPOSE 80
-#COPY C:/users/xxx/17349/despliegue /var/lib/nginx/html
-COPY ./despliegue /var/lib/nginx/html
-COPY ./rafael.conf /etc/nginx/http.d/default.conf
+# Etapa 1: construir el JAR
+from rrojano/spring-boot as fuente
+workdir /app 
+
+COPY SaludarDatos/pom.xml .
+RUN mvn dependency:go-offline
+COPY SaludarDatos/src ./src
+RUN mvn -DskipTests clean package
+
+# Etapa 2: imagen final
+FROM rrojano/spring-boot
+WORKDIR /app
+
+# Copiar el JAR generado en la etapa anterior
+COPY --from=fuente /app/target/*.jar app.jar
+EXPOSE 8080
+CMD ["java", "-jar", "app.jar"]
+
