@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @CrossOrigin
 @RestController
-public class App {
+public class JuegoApp {
     @Autowired
     IJuego ijuego;
 
