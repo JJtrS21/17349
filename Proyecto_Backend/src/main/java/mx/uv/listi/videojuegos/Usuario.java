@@ -14,7 +14,7 @@ public class Usuario {
     private Integer idUsuario;
     private String nombre;
     private String correo;
-    private String contrasena;
+    private String contra;
 
     public Usuario() {}
 
@@ -36,10 +36,10 @@ public class Usuario {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-    public String getPassword() {
-        return contrasena;
+    public String getContra() {
+        return contra;
     }
-    public void setPassword(String password) {
-        this.contrasena = password;
+    public void setContra(String contra) {
+        this.contra = contra;
     }
 }
