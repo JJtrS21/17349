@@ -1,10 +1,6 @@
 package mx.uv.listi.videojuegos;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,33 +16,9 @@ public class UsuarioApp {
     IUsuario iusuario;
 
     @RequestMapping(value = "/usuarios", method = RequestMethod.GET)
-    public ResponseEntity<?> obtenerUsuarios(){
-        try {
-            System.out.println("=== INTENTANDO OBTENER USUARIOS ===");
-            Iterable<Usuario> usuarios = iusuario.findAll();
-            
-            // Convertir a lista para forzar la ejecución
-            List<Usuario> lista = new ArrayList<>();
-            for (Usuario u : usuarios) {
-                System.out.println("Usuario encontrado: " + u.getNombre());
-                lista.add(u);
-            }
-            
-            System.out.println("=== ÉXITO: " + lista.size() + " usuarios ===");
-            return ResponseEntity.ok(lista);
-            
-        } catch (Exception e) {
-            System.err.println("=== ERROR EN /usuarios ===");
-            e.printStackTrace();  // Esto irá a los logs de Railway
-            System.err.println("Mensaje: " + e.getMessage());
-            System.err.println("Causa: " + (e.getCause() != null ? e.getCause().getMessage() : "N/A"));
-            
-            return ResponseEntity.status(500)
-                .body("Error interno: " + e.getClass().getSimpleName() + 
-                     " - " + e.getMessage());
-        }
+    public Iterable<Usuario> obtenerUsuarios(){
+        return iusuario.findAll();
     }
-    
 
     @RequestMapping(value = "/usuarios/{id}", method = RequestMethod.GET)
     public java.util.Optional<Usuario> obtenerUsuario(@PathVariable Integer id){
