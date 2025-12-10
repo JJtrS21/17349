@@ -14,7 +14,7 @@ public class Usuario {
     private Integer idUsuario;
     private String nombre;
     private String correo;
-    private String password;
+    private String contrasena;
 
     public Usuario() {}
 
@@ -37,9 +37,9 @@ public class Usuario {
         this.correo = correo;
     }
     public String getPassword() {
-        return password;
+        return contrasena;
     }
     public void setPassword(String password) {
-        this.password = password;
+        this.contrasena = password;
     }
 }
